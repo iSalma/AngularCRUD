@@ -1,0 +1,62 @@
+
+
+{
+    "products": [
+      {
+        "id": 1,
+        "code": 1,
+        "name": "Post 1",
+        "price": 22
+      },
+      {
+        "id": 2,
+        "code": 2,
+        "name": "Post 52",
+        "price": 26
+      },
+      {
+        "id": 3,
+        "code": 3,
+        "name": "Post 51",
+        "price": 52
+      },
+      {
+        "id": 1,
+        "code": 1,
+        "name": "Post 1",
+        "price": 22
+      },
+      {
+        "id": 2,
+        "code": 2,
+        "name": "Post 52",
+        "price": 26
+      },
+      {
+        "id": 4,
+        "code": 3,
+        "name": "Post 51",
+        "price": 52
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "categoryName": "prod 1"
+      },
+      {
+        "id": 2,
+        "categoryName": "prod 2"
+      },
+      {
+        "id": 3,
+        "categoryName": "prod 11"
+      },
+      {
+        "id": 4,
+        "categoryName": "prod 22"
+      }
+    ]
+  }
+
+
