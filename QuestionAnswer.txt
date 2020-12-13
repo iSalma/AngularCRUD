@@ -1,0 +1,3 @@
+Things I'd use to build a website are Angular framework(HTML, SCSS, Typescript) or without framework (HTML, CSS, Javascript, jQuery) and bootsrap or other libraries for angular as nebular and material. I can covert designs from ps,xd or figma for an example to a website.
+The challenges I face while coding in Angular is keeping in mind to make the app as simple as I can to help to understarnd and work faster if there are any changes or updates. Divide to many modules and components and use routing and lazyloading to keep the website light. 
+One of the other challenge is to make the website responsive to all the devices' screens and handle it smoothly.
