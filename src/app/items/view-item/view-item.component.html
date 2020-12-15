@@ -1,8 +1,11 @@
 
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline m-auto">
-    <button class="btn btn-sm btn-outline-info " type="button"><a href="/add-item">Add</a> </button>
-    <button class="btn btn-sm btn-outline-danger" type="button"><a href="/delete-item">Delete</a></button>
+    <!-- second version - separated comp -->
+    <button (click)="open(content)" class="btn btn-sm btn-outline-info " type="button">Add </button>
+    <!-- first version -->
+    <!-- <button (click)="open(content)" class="btn btn-sm btn-outline-info " type="button"><a href="/add-item">Add</a> </button>  -->
+    <button class="btn btn-sm btn-outline-danger" type="button"><a href="/delete-item">Delete selected</a></button>
   </form>
 </nav>
 
@@ -23,7 +26,8 @@
               </div>
               <form class="form-inline m-auto">
                 <input type="checkbox" aria-label=""  class="mx-2">
-                <button class="btn btn-sm btn-outline-warning " type="button"><a href="/update-item/{{product.index}}">Update</a></button>
+                
+                <button  class="btn btn-sm btn-outline-warning " type="button"><a href="/update-item/{{product.index}}">Update</a></button>
                 <button class="btn btn-sm btn-outline-danger" type="button"><a href="/delete-item/{{product.index}}">Delete</a></button>
               </form>
             </div>
@@ -31,4 +35,40 @@
   </div>
   </div>
         
-          
+  
+
+  
+
+
+
+
+<!-- ADD product Popup -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form  (submit)="addProduct(addForm)" #addForm="ngForm">
+      <div class="form-group" >
+        <input  type="number" class="form-control" placeholder="id"  aria-describedby="basic-addon1" name="id" ngModel> 
+    </div>
+      <div class="form-group">
+          <input type="text" class="form-control" placeholder="name"  aria-describedby="basic-addon1" name="name" ngModel> 
+      </div>
+      <div class="form-group" >
+        <input  type="number" class="form-control" placeholder="code"  aria-describedby="basic-addon1" name="code" ngModel> 
+    </div>
+    <div class="form-group" >
+      <input  type="number" class="form-control" placeholder="price"  aria-describedby="basic-addon1" name="price" ngModel> 
+  </div>
+    
+        <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click')">Add</button>
+      
+    </form>
+  </div>
+
+</ng-template>
+

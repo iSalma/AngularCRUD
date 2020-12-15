@@ -26,8 +26,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## details
 
-user local json-server to work on database json file
-or can use https://my-json-server.typicode.com/isalma/productsapi
-but change the link in service file first
+## Reminder
+1. used json server to make api local .. assets/jsondata/db.json .. to to file in cmd and write "json-server --watch .\db.josn"
+2. made items module lazy loading
+3. side menu is another module for the side menu categories and it's add category button
+4. at first I created 2 separate comp for every CRUD process but to use dialoge popup I added All in view-item comp 
+
