@@ -2,16 +2,16 @@
 
 <form (submit)="addProduct(addForm)" #addForm="ngForm">
     <div class="form-group">
-        <input class="  form-control form-control-sm" required  type="text" placeholder="id"  name="id" ngModel>
+        <input class="  form-control form-control-sm" required  type="number" placeholder="category number"  name="id" ngModel>
     </div>
     <div class="form-group">
-        <input class="  form-control form-control-sm" type="text" placeholder="name" required name="name" ngodel>
+        <input class="  form-control form-control-sm" type="text" placeholder="name" required name="name" ngModel>
     </div>
     <div class="form-group">
-        <input class="  form-control form-control-sm" type="text" placeholder="price" required name="price" ngModel>
+        <input class="  form-control form-control-sm" type="number" placeholder="price" required name="price" ngModel>
     </div>
     <div class="form-group">
-        <input class="  form-control form-control-sm" type="text" placeholder="code" required name="code" ngModel>
+        <input class="  form-control form-control-sm" type="number" placeholder="code" required name="code" ngModel>
     </div>
     <button type="submit" class="btn  btn-info"><a class="text-light "href="/view-item">Add</a></button>
   </form>

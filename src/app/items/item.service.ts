@@ -18,14 +18,18 @@ export class ItemService {
     const itemUrl = 'http://localhost:3000/products';
     return this._httpClient.post<Product>(itemUrl, itemBody);
   }
+  addCategory(catId):Observable<Category>{
+    const itemUrl = 'http://localhost:3000/categories';
+    return this._httpClient.post<Category>(itemUrl, catId);
+  }
 
   updateItem(itemId,itemBody):Observable<Product>{
-    const itemUrl = 'http://localhost:3000/products/'+itemId;
+    const itemUrl = 'http://localhost:3000/products?index='+itemId;
     return this._httpClient.put<Product>(itemUrl, itemBody);
   }
 
   deleteItem(itemId):Observable<Product>{
-    const itemUrl = 'http://localhost:3000/products/'+itemId;
+    const itemUrl = 'http://localhost:3000/products?index='+itemId;
     return this._httpClient.delete<Product>(itemUrl);
   }
 
@@ -35,7 +39,7 @@ export class ItemService {
   }
 
   getOne(itemId): Observable<Product>{
-    const itemUrl = 'http://localhost:3000/products?id='+itemId;
+    const itemUrl = 'http://localhost:3000/products?index='+itemId;
     return this._httpClient.get<Product>(itemUrl);
   }
 

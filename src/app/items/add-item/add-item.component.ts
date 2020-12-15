@@ -23,6 +23,7 @@ export class AddItemComponent implements OnInit {
     };
 
     this._itemService.addItem(newProduct).subscribe(data =>{
+      console.log(data);
     })
   }
 

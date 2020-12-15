@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'view-item', pathMatch:'full'},
   { path:'add-item', component: AddItemComponent},
   { path:'view-item', component: ViewItemComponent},
-  { path:'update-item/:id', component: UpdateItemComponent},
-  { path:'delete-item/:id', component: DeleteItemComponent},
+  { path:'update-item/:index', component: UpdateItemComponent},
+  { path:'delete-item/:index', component: DeleteItemComponent},
   { path:'view-one/:id', component:ViewOneComponent},
   { path:'category/:id', component:ViewCategoryComponent}
 ];

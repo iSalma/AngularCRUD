@@ -2,17 +2,17 @@
 
 <form (submit)="updateProduct(updateForm)" #updateForm="ngForm">
     <div class="form-group">
-        <input class="  form-control form-control-sm" required  type="text" placeholder="id"  name="id" ngModel  [(ngModel)] = "productData.id" #ctrl="ngModel">
+        <input class="  form-control form-control-sm" required  type="text" placeholder="category number"  name="id" ngModel  [(ngModel)] = "productData.id" >
     </div>
     <div class="form-group">
-        <input class="  form-control form-control-sm" type="text" placeholder="name" required name="name" ngModel [(ngModel)]="productData.name" #ctrl="ngModel">
+        <input class="  form-control form-control-sm" type="text" placeholder="name" required name="name" ngModel [(ngModel)]="productData.name">
     </div>
     <div class="form-group">
-        <input class="  form-control form-control-sm" type="text" placeholder="price" required name="price" ngModel [(ngModel)] = "productData.price" #ctrl="ngModel">
+        <input class="  form-control form-control-sm" type="text" placeholder="price" required name="price" ngModel [(ngModel)] = "productData.price" >
     </div>
     <div class="form-group">
-        <input class="  form-control form-control-sm" type="text" placeholder="code" required name="code" ngModel [(ngModel)] = "productData.code" #ctrl="ngModel">
+        <input class="  form-control form-control-sm" type="text" placeholder="code" required name="code" ngModel [(ngModel)] = "productData.code">
     </div>
     <button type="submit" class="btn  btn-info"><a class="text-light "href="/view-item">Update</a></button>
   </form>
-  <p>{{productData}},,,{{itemID}},,,,</p>
+  <p>{{productData.name}},,,{{itemID}},,,,</p>

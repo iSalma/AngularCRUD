@@ -38,12 +38,12 @@ export class SidemenuComponent implements OnInit {
     }
   }
 
-  addCategory(){ 
-    let row = document.createElement('div');   
-      row.innerHTML = ` 
-      <a href="#" class="list-group-item">${this.categoryName}</a>`; 
-      document.querySelector('.showLink').appendChild(row); 
-  } 
+  // addCategory(){ 
+  //   let row = document.createElement('div');   
+  //     row.innerHTML = ` 
+  //     <a href="#" class="list-group-item">${this.categoryName}</a>`; 
+  //     document.querySelector('.showLink').appendChild(row); 
+  // } 
   
 
   ngOnInit(): void {
@@ -53,6 +53,16 @@ export class SidemenuComponent implements OnInit {
 
   }
 
+    addCat(form){
+    let newCat = {
+      id:form.value.id,
+      categoryName:form.value.categoryName,
+    };
+    console.log(newCat);
+    this._itemService.addCategory(newCat).subscribe(data =>{
+      console.log(data);
+    });
 
+  }
 
 }

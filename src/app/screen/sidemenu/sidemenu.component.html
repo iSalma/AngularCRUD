@@ -19,15 +19,19 @@
       </button>
     </div>
     <div class="modal-body">
-      <form>
+      <form  (submit)="addCat(addForm)" #addForm="ngForm">
+        <div class="form-group" >
+          <input  type="number" class="form-control" placeholder="id" aria-label="Username" aria-describedby="basic-addon1" name="id" ngModel> 
+      </div>
         <div class="form-group">
-            <input (keyup)=getVal($event) type="text" class="form-control" placeholder="name" aria-label="Username" aria-describedby="basic-addon1"> 
+            <input (keyup)=getVal($event) type="text" class="form-control" placeholder="name" aria-label="Username" aria-describedby="basic-addon1" name="categoryName" ngModel> 
         </div>
+      
+          <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click')">Add</button>
+        
       </form>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')"(click)="addCategory()">Add</button>
-    </div>
+
   </ng-template>
   
   <button class="btn btn-info mt-3" (click)="open(content)">Add category</button>
