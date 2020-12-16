@@ -1,18 +1,51 @@
 
 
-<form (submit)="updateProduct(updateForm)" #updateForm="ngForm">
+<!-- <form (submit)="updateProduct(updateForm)" #updateForm="ngForm">
     <div class="form-group">
-        <input class="  form-control form-control-sm" required  type="text" placeholder="category number"  name="id" ngModel  [(ngModel)] = "productData.id" >
+        <input class="  form-control form-control-sm" required  type="number" placeholder="category number"  name="id" ngModel  [(ngModel)] = "productData.id" >
     </div>
     <div class="form-group">
         <input class="  form-control form-control-sm" type="text" placeholder="name" required name="name" ngModel [(ngModel)]="productData.name">
     </div>
     <div class="form-group">
-        <input class="  form-control form-control-sm" type="text" placeholder="price" required name="price" ngModel [(ngModel)] = "productData.price" >
+        <input class="  form-control form-control-sm" type="number" placeholder="price" required name="price" ngModel [(ngModel)] = "productData.price" >
     </div>
     <div class="form-group">
-        <input class="  form-control form-control-sm" type="text" placeholder="code" required name="code" ngModel [(ngModel)] = "productData.code">
+        <input class="  form-control form-control-sm" type="number" placeholder="code" required name="code" ngModel [(ngModel)] = "productData.code">
     </div>
     <button type="submit" class="btn  btn-info"><a class="text-light "href="/view-item">Update</a></button>
   </form>
-  <p>{{productData.name}},,,{{itemID}},,,,</p>
+  <p>{{productData.name}},,,{{itemID}},,,,</p> -->
+
+
+<!-- 3rd version -->
+  <button  (click)="open(content)"  class="btn btn-sm btn-outline-warning " type="button">Update</button>
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Update</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form  (submit)="updateProduct(updateForm)" #updateForm="ngForm">
+        <div class="form-group" >
+          <input  type="number" class="form-control" placeholder="cat"  aria-describedby="basic-addon1" name="cat" ngModel  #ctrl="ngModel" [(ngModel)] = "productData.cat"> 
+      </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="name"  aria-describedby="basic-addon1" name="name" ngModel [(ngModel)]="productData.name"> 
+        </div>
+        <div class="form-group" >
+          <input  type="number" class="form-control" placeholder="code"  aria-describedby="basic-addon1" name="code" ngModel [(ngModel)] = "productData.code"> 
+      </div>
+      <div class="form-group" >
+        <input  type="number" class="form-control" placeholder="price"  aria-describedby="basic-addon1" name="price" ngModel [(ngModel)] = "productData.price"> 
+    </div>
+      
+          <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click')">Update</button>
+        
+      </form>
+    </div>
+  
+  </ng-template>
+  <!-- <p>{{productData.name}},,,{{itemID}},,,,</p> -->

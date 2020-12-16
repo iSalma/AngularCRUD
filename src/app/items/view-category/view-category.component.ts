@@ -54,7 +54,7 @@ export class ViewCategoryComponent implements OnInit {
   addProduct(form){
     let newProduct = {
       index:10,
-      id:form.value.id,
+      cat:form.value.cat,
       name:form.value.name,
       code:form.value.code,
       price:form.value.price,

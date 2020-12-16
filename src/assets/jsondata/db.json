@@ -1,95 +1,18 @@
 {
   "products": [
     {
-      "index": 1,
-      "id": 3,
-      "code": 3,
-      "name": "Post 51",
-      "price": 52
-    },
-    {
-      "index": 2,
-      "id": 7,
-      "name": "Post 51",
+      "cat": 2,
+      "id": 2,
+      "name": "Post 40",
       "code": "b ",
       "price": "kjb"
     },
     {
-      "index": 10,
-      "id": "55",
-      "name": "kj",
-      "code": "",
-      "price": "54"
-    },
-    {
-      "index": 10,
-      "id": "54",
-      "name": "kljb",
-      "code": "54",
-      "price": "56"
-    },
-    {
-      "index": 10,
-      "id": "88",
-      "name": "jkkn",
-      "code": "88",
-      "price": "88"
-    },
-    {
-      "index": 10,
-      "id": 78,
-      "name": "lj",
-      "code": 468,
-      "price": 54
-    },
-    {
-      "index": 10,
-      "id": 99,
-      "name": "pp",
-      "code": 30,
-      "price": 20
-    },
-    {
-      "index": 10,
-      "id": 5,
-      "name": "hh",
-      "code": 33,
-      "price": 77
-    },
-    {
-      "index": 10,
-      "id": 77,
-      "name": "bbyw",
-      "code": 3547,
-      "price": 458
-    },
-    {
-      "index": 10,
-      "id": 888,
-      "name": "hhhh",
-      "code": 354,
-      "price": 36
-    },
-    {
-      "index": 10,
-      "id": 665,
-      "name": "lkm",
-      "code": 78,
-      "price": 78
-    },
-    {
-      "index": 10,
-      "id": 65,
-      "name": "lo",
-      "code": 1,
-      "price": 100
-    },
-    {
-      "index": 10,
-      "id": 684,
-      "name": "uuuuuu",
-      "code": 64,
-      "price": 65
+      "cat": 2,
+      "name": "ooo",
+      "code": 58,
+      "price": 54,
+      "id": 3
     }
   ],
   "categories": [
@@ -103,15 +26,11 @@
     },
     {
       "id": 3,
-      "categoryName": "cat 11"
+      "categoryName": "cat 3"
     },
     {
-      "id": 88,
-      "categoryName": "k,b"
-    },
-    {
-      "id": 96,
-      "categoryName": "ll"
+      "categoryName": "cat 4",
+      "id": 4
     }
   ]
 }

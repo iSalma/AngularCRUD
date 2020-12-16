@@ -1,10 +1,10 @@
 
 
 export interface Product {
-    index:Number;
+    cat: Number;
     id: Number;
     name: string;
-    code: number;
-    price: number;
+    code: Number;
+    price: Number;
     
 }

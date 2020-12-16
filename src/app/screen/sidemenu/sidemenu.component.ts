@@ -55,7 +55,7 @@ export class SidemenuComponent implements OnInit {
 
     addCat(form){
     let newCat = {
-      id:form.value.id,
+      // id:form.value.id,
       categoryName:form.value.categoryName,
     };
     console.log(newCat);

@@ -1,7 +1,10 @@
 <nav class="navbar navbar-light bg-light">
   <form class="form-inline m-auto">
+    <!-- 3rd version - used selector and every comp is spearated -->
+    <app-add-item></app-add-item>
+
     <!-- second version - separated comp -->
-    <button (click)="open(content)" class="btn btn-sm btn-outline-info " type="button">Add </button>
+    <!-- <button (click)="open(content)" class="btn btn-sm btn-outline-info " type="button">Add </button> -->
     <!-- first version -->
     <!-- <button (click)="open(content)" class="btn btn-sm btn-outline-info " type="button"><a href="/add-item">Add</a> </button>  -->
     <button class="btn btn-sm btn-outline-danger" type="button"><a href="/delete-item">Delete selected</a></button>
@@ -9,59 +12,31 @@
 </nav>
     
     
-     <div class="container">
-        <div class="row">
-        
-    
-            <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of itemList">
-                <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                  <div class="card-body">
-                    <h4 class="card-title">
-                      <p >{{product.name}}</p>
-                    </h4>
-                    <h5>${{product.price}}</h5>
-                    <p class="card-text">code: {{product.code}}</p>
-                  </div>
-                  <form class="form-inline m-auto">
-                    <input type="checkbox" aria-label=""  class="mx-2">
-                    <button class="btn btn-sm btn-outline-warning " type="button"><a href="/update-item/{{product.index}}">Update</a></button>
-                    <button class="btn btn-sm btn-outline-danger" type="button"><a href="/delete-item/{{product.index}}">Delete</a></button>
-                  </form>
-                </div>
-              </div>
-      </div>
-      </div>
-            
-              
+<div class="container">
+  <div class="row">
+  
 
-<!-- ADD product Popup -->
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Add</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form  (submit)="addProduct(addForm)" #addForm="ngForm">
-      <div class="form-group" >
-        <input  type="number" class="form-control" placeholder="id"  aria-describedby="basic-addon1" name="id" ngModel> 
-    </div>
-      <div class="form-group">
-          <input type="text" class="form-control" placeholder="name"  aria-describedby="basic-addon1" name="name" ngModel> 
-      </div>
-      <div class="form-group" >
-        <input  type="number" class="form-control" placeholder="code"  aria-describedby="basic-addon1" name="code" ngModel> 
-    </div>
-    <div class="form-group" >
-      <input  type="number" class="form-control" placeholder="price"  aria-describedby="basic-addon1" name="price" ngModel> 
-  </div>
-    
-        <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click')">Add</button>
-      
-    </form>
-  </div>
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of itemList">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <p >{{product.name}}</p>
+                <p>Category: {{product.cat}}</p>
+              </h4>
+              <h5>${{product.price}}</h5>
+              <p class="card-text">code: {{product.code}}</p>
+            </div>
+            <form class="form-inline m-auto">
+              <input type="checkbox" aria-label=""  class="mx-2">
+              <!-- 3rd version -->
+              <app-update-item></app-update-item>
 
-</ng-template>
-
+              <!-- 1st version -->
+              <!-- <button  class="btn btn-sm btn-outline-warning " type="button"><a href="/update-item/{{product.index}}">Update</a></button> -->
+              <button class="btn btn-sm btn-outline-danger" type="button"><a href="/delete-item/{{product.id}}">Delete</a></button>
+            </form>
+          </div>
+        </div>
+</div>
+</div>

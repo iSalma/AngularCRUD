@@ -15,7 +15,7 @@ export class DeleteItemComponent implements OnInit {
   ngOnInit(): void {
 
     this._activatedRoute.params.subscribe(data => {
-      this.itemID = data.index;
+      this.itemID = data.id;
       console.log(data);
       this._ItemsService.deleteItem(this.itemID).subscribe(deleteProductdata => {
         console.log(deleteProductdata);

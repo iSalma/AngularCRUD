@@ -24,12 +24,12 @@ export class ItemService {
   }
 
   updateItem(itemId,itemBody):Observable<Product>{
-    const itemUrl = 'http://localhost:3000/products?index='+itemId;
+    const itemUrl = 'http://localhost:3000/products/'+itemId;
     return this._httpClient.put<Product>(itemUrl, itemBody);
   }
 
   deleteItem(itemId):Observable<Product>{
-    const itemUrl = 'http://localhost:3000/products?index='+itemId;
+    const itemUrl = 'http://localhost:3000/products/'+itemId;
     return this._httpClient.delete<Product>(itemUrl);
   }
 
@@ -39,7 +39,7 @@ export class ItemService {
   }
 
   getOne(itemId): Observable<Product>{
-    const itemUrl = 'http://localhost:3000/products?index='+itemId;
+    const itemUrl = 'http://localhost:3000/products?id='+itemId;
     return this._httpClient.get<Product>(itemUrl);
   }
 
@@ -49,7 +49,7 @@ export class ItemService {
   }
 
   viewCategory(categoryId):Observable<Product>{
-    const categoriesUrl = 'http://localhost:3000/products?id='+categoryId;
+    const categoriesUrl = 'http://localhost:3000/products?cat='+categoryId;
     return this._httpClient.get<Product>(categoriesUrl);
   }
 }
