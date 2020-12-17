@@ -32,4 +32,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. made items module lazy loading
 3. side menu is another module for the side menu categories and it's add category button
 4. at first I created 2 separate comp for every CRUD process but to use dialoge popup I added All in view-item comp 
+5. importent note: json server deafult path is localhost/{{anyname}}/id .. as id is one of info,, to change to index for example: json-server --id index --watch db.json ... still id can be duplicated by post http method .. so i changed every index to id and id (used to refer to category id to connect) to cat
+
 
