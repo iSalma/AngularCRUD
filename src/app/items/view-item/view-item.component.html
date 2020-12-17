@@ -31,9 +31,9 @@
                 <p class="card-text">code: {{product.code}}</p>
               </div>
               <form class="form-inline m-auto">
-                <input type="checkbox" aria-label=""  class="mx-2">
+                <input type="checkbox" aria-label=""  class="mx-2"  >
                 <!-- 3rd version -->
-                <app-update-item></app-update-item>
+                <app-update-item (click) = "itemID(product.id)"   [myID]="product.id"></app-update-item>
 
                 <!-- 1st version -->
                 <!-- <button  class="btn btn-sm btn-outline-warning " type="button"><a href="/update-item/{{product.id}}">Update</a></button> -->

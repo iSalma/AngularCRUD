@@ -1,18 +1,34 @@
 {
   "products": [
     {
-      "cat": 2,
-      "id": 2,
-      "name": "Post 40",
-      "code": "b ",
-      "price": "kjb"
+      "cat": 3,
+      "name": "ukk",
+      "code": 367,
+      "price": 36,
+      "id": 2
     },
     {
       "cat": 2,
       "name": "ooo",
       "code": 58,
       "price": 54,
-      "id": 3
+      "id": 3,
+      "isChecked": false
+    },
+    {
+      "cat": 4,
+      "name": "bbbb",
+      "code": 55,
+      "price": 55,
+      "id": 4,
+      "isChecked": false
+    },
+    {
+      "cat": 1,
+      "name": "jooj",
+      "code": 78,
+      "price": 531,
+      "id": 5
     }
   ],
   "categories": [
@@ -31,6 +47,10 @@
     {
       "categoryName": "cat 4",
       "id": 4
+    },
+    {
+      "categoryName": "cat 5",
+      "id": 5
     }
   ]
 }

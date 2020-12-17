@@ -19,7 +19,7 @@
 
 
 <!-- 3rd version -->
-  <button  (click)="open(content)"  class="btn btn-sm btn-outline-warning " type="button">Update</button>
+  <button  (click)="open(content)"  (click)="fun()" class="btn btn-sm btn-outline-warning " type="button">Update</button>
   <ng-template #content let-modal>
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Update</h4>
@@ -41,9 +41,7 @@
       <div class="form-group" >
         <input  type="number" class="form-control" placeholder="price"  aria-describedby="basic-addon1" name="price" ngModel [(ngModel)] = "productData.price"> 
     </div>
-      
-          <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click')">Update</button>
-        
+          <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click')" >Update</button>
       </form>
     </div>
   

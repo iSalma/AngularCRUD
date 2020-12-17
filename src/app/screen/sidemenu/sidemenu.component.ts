@@ -62,7 +62,13 @@ export class SidemenuComponent implements OnInit {
     this._itemService.addCategory(newCat).subscribe(data =>{
       console.log(data);
     });
+  }
 
+  removeCat(catID){
+    console.log(catID);
+    this._itemService.deleteCategory(catID).subscribe(data =>{
+      // console.log(data);
+    });
   }
 
 }

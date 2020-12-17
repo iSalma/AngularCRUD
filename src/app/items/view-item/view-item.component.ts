@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import {ItemService} from '../../items/item.service'
 import { Product } from '../product';
+
 
 
 @Component({
@@ -15,16 +16,32 @@ import { Product } from '../product';
 export class ViewItemComponent implements OnInit {
 
   itemList: Product;
+  currentID:number;
 
   constructor(private _itemService: ItemService) { }
-
-
 
   ngOnInit(): void {
     this._itemService.getAllItems().subscribe(data=>{
       this.itemList =data;
     }); 
 }
+
+
+  itemID(itemID){
+  console.log(itemID);
+  this.currentID = itemID;
+  console.log(this.currentID);
+  return itemID;
+}
+ 
+  // receivedChildMessage: number;
+  // getMessage(message: number) {
+  //   this.receivedChildMessage = message;
+  //   console.log(message);
+  // }
+
+  
+
 
 
 }

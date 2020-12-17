@@ -16,7 +16,7 @@ export class ViewOneComponent implements OnInit {
 
   ngOnInit(): void {
     this._activatedRoute.params.subscribe(data=>{
-      this.itemList =data.id;
+      this.productId =data.id;
     this._itemService.getOne(this.productId).subscribe(data=>{
         this.itemList =data;});
         console.log(data.id);    

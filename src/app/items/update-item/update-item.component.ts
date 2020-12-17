@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ItemService } from '../item.service';
 import { Product } from '../product';
 
 import { NgbModal,ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap/';
+import { ViewItemComponent } from '../view-item/view-item.component';
 
 @Component({
   selector: 'app-update-item',
@@ -12,18 +13,21 @@ import { NgbModal,ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap/';
 })
 export class UpdateItemComponent implements OnInit {
 
-  itemID= 0;
-  productData: Product;
-  //  ={    
-  //   "index":1,
-  // "id":22,
-  // "name":"lnh",
-  // "code":55,
-  // "price":55};
+  // itemID:number= 1;
+  @Input() myID = new EventEmitter<number>();
+  productData: Product
+   ={    
+    "cat":1,
+  "id":2,
+  "name":"l",
+  "code":1,
+  "price":1,
+  "isChecked":false
+}; //have to be declared first
 
 
   closeResult = '';
-  hello ="mmm"
+  receivedChildMessage: number;
 
   constructor(private modalService: NgbModal,private _activatedRoute: ActivatedRoute, private _ItemsService: ItemService) { }
 
@@ -35,7 +39,6 @@ export class UpdateItemComponent implements OnInit {
     });
   }
 
- 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -47,17 +50,33 @@ export class UpdateItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._activatedRoute.params.subscribe(data => {
-      this.itemID =3; //moshkla hna f data btl3 {} fady, lkn lw bdlt id b id f json by update l obj da
-      console.log(data.id);
+    // this._activatedRoute.params.subscribe(upData => {
+    //   this.itemID =upData.id; //moshkla hna f data btl3 {} fady, lkn lw bdlt id b id f json by update l obj da
+    //   console.log(upData.id);
 
-      // this._ItemsService.getOne(this.itemID).subscribe(productD => {
-      //   this.productData = productD; // get the existing data of the product
-        // console.log(this.productData);
-      });
+    //   this._ItemsService.getOne(this.itemID).subscribe(productD => {
+    //     this.productData = productD; // get the existing data of the product
+    //     console.log(this.productData);
+    //   });
 
     // });
+
   }
+
+// @Output() messageToEmit = new EventEmitter<number>();
+// sendMessageToParent(message: number) {
+//     this.messageToEmit.emit(message);
+// }
+
+
+fun(){
+
+    console.log("id"+this.myID);
+    this._ItemsService.getOne(this.myID).subscribe(productD => {
+      this.productData = productD; 
+      // console.log(this.productData);
+    });
+}
 
   updateProduct(form){
     // form.value.name = "hii";
@@ -68,9 +87,9 @@ export class UpdateItemComponent implements OnInit {
       code:form.value.code,
       price:form.value.price,
     };
-    // this._ItemsService.updateItem(this.itemID,updateProduct).subscribe(data => {
-    //   console.log(data);
-  // });
+    this._ItemsService.updateItem(this.myID,updateProduct).subscribe(data => {
+      // console.log(data);
+  });
   
 }
 

@@ -46,24 +46,11 @@ export class ViewCategoryComponent implements OnInit {
     this._itemService.viewCategory(this.category).subscribe(catData => {
       this.itemList = catData;
 
-
     })
     });
   }
 
-  addProduct(form){
-    let newProduct = {
-      index:10,
-      cat:form.value.cat,
-      name:form.value.name,
-      code:form.value.code,
-      price:form.value.price,
-    };
-  
-    this._itemService.addItem(newProduct).subscribe(data =>{
-      console.log(data);
-    })
-  }
-  
+
+ 
 
 }

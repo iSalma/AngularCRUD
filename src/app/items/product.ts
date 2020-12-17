@@ -6,5 +6,7 @@ export interface Product {
     name: string;
     code: Number;
     price: Number;
+    isChecked?:boolean;
+
     
 }
