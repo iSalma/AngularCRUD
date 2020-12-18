@@ -9,7 +9,8 @@ import { UpdateItemComponent } from './update-item/update-item.component';
 import { DeleteItemComponent } from './delete-item/delete-item.component';
 import { ViewCategoryComponent } from './view-category/view-category.component';
 import { ViewOneComponent } from './view-one/view-one.component';
-import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
+import { DeletSelectedComponent } from './delet-selected/delet-selected.component'
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms'
       UpdateItemComponent,
        DeleteItemComponent,
        ViewCategoryComponent,
-       ViewOneComponent
+       ViewOneComponent,
+       DeletSelectedComponent
       ],
   imports: [
     CommonModule,

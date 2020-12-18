@@ -1,22 +1,6 @@
 {
   "products": [
     {
-      "cat": 2,
-      "name": "ooo",
-      "code": 58,
-      "price": 54,
-      "id": 3,
-      "isChecked": false
-    },
-    {
-      "cat": 4,
-      "name": "bbbb",
-      "code": 55,
-      "price": 55,
-      "id": 4,
-      "isChecked": false
-    },
-    {
       "cat": 3,
       "name": "hbkj",
       "code": 65,
@@ -36,6 +20,20 @@
       "code": 65,
       "price": 65,
       "id": 10
+    },
+    {
+      "cat": 4,
+      "name": ";km",
+      "code": 45,
+      "price": 65,
+      "id": 12
+    },
+    {
+      "cat": 1,
+      "name": "kj",
+      "code": 67,
+      "price": 687,
+      "id": 13
     }
   ],
   "categories": [

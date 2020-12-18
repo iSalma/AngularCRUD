@@ -50,7 +50,23 @@ export class ViewCategoryComponent implements OnInit {
     });
   }
 
-
+  selectedItems:number[]=[];
+  isCheck(event, itemID) {
+      console.log(itemID);
+      
+      if ( event.target.checked == true) {
+        this.selectedItems.push(itemID);
+        console.log("true");
+      }
+      else{
+        const index = this.selectedItems.indexOf(itemID);
+        if (index > -1) {
+          this.selectedItems.splice(index, 1);
+        }      
+        console.log("false");
+      }
+      console.log(this.selectedItems);
+    }
  
 
 }

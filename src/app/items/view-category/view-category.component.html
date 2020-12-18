@@ -2,12 +2,13 @@
   <form class="form-inline m-auto">
     <!-- 3rd version - used selector and every comp is spearated -->
     <app-add-item></app-add-item>
+    <app-delet-selected [myIDs]="selectedItems"></app-delet-selected>
 
     <!-- second version - separated comp -->
     <!-- <button (click)="open(content)" class="btn btn-sm btn-outline-info " type="button">Add </button> -->
     <!-- first version -->
     <!-- <button (click)="open(content)" class="btn btn-sm btn-outline-info " type="button"><a href="/add-item">Add</a> </button>  -->
-    <button class="btn btn-sm btn-outline-danger" type="button"><a href="/delete-item">Delete selected</a></button>
+    <!-- <button class="btn btn-sm btn-outline-danger" type="button"><a href="/delete-item">Delete selected</a></button> -->
   </form>
 </nav>
     
@@ -28,7 +29,7 @@
               <p class="card-text">code: {{product.code}}</p>
             </div>
             <form class="form-inline m-auto">
-              <input type="checkbox" aria-label=""  class="mx-2">
+              <input type="checkbox" aria-label=""  class="mx-2" (click)="isCheck($event, product.id)" >
               <!-- 3rd version -->
               <app-update-item  [myID]="product.id"></app-update-item>
               <app-delete-item  [myID]="product.id"></app-delete-item>

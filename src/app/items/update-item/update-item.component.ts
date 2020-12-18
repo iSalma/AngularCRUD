@@ -23,7 +23,7 @@ export class UpdateItemComponent implements OnInit {
   "code":1,
   "price":1,
   "isChecked":false
-}; //have to be declared first
+}; //have to be assigned first
 
 
   closeResult = '';
