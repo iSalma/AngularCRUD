@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input,EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ItemService } from '../item.service';
 
@@ -9,18 +9,28 @@ import { ItemService } from '../item.service';
 })
 export class DeleteItemComponent implements OnInit {
 
+  @Input() myID = new EventEmitter<number>();
+
   itemID= 0;
   constructor(private _activatedRoute: ActivatedRoute,  private _ItemsService: ItemService) { }
 
   ngOnInit(): void {
 
-    this._activatedRoute.params.subscribe(data => {
-      this.itemID = data.id;
-      console.log(data);
-      this._ItemsService.deleteItem(this.itemID).subscribe(deleteProductdata => {
+    // this._activatedRoute.params.subscribe(data => {
+    //   this.itemID = data.id;
+    //   console.log(data);
+    //   this._ItemsService.deleteItem(this.itemID).subscribe(deleteProductdata => {
+    //     console.log(deleteProductdata);
+    //   });
+    // });
+  }
+
+
+  funDelete(){
+
+      this._ItemsService.deleteItem(this.myID).subscribe(deleteProductdata => {
         console.log(deleteProductdata);
       });
-    });
   }
 
 }
