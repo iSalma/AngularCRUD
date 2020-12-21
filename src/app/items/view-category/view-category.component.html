@@ -43,3 +43,35 @@
         </div>
 </div>
 </div>
+
+<nav aria-label="Page navigation example" class="d-flex justify-content-center my-3">
+  <div class="mx-2 d-flex" >
+    <label for="">Limit</label>
+    <select class="form-control form-control-sm" (change)="changeLimit($event)">
+      <option>3</option>
+      <option>6</option>
+      <option>9</option>
+    </select>
+  </div>
+
+  <div>
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" (click)="changePgae($event)" (page)="1" >1</a></li>
+      <li class="page-item"><a class="page-link" (click)="changePgae($event)">2</a></li>
+      <li class="page-item"><a class="page-link" (click)="changePgae($event)">3</a></li>
+      <li class="page-item">
+        <a class="page-link" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+ 
+</nav>

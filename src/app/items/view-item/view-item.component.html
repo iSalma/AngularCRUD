@@ -47,8 +47,49 @@
   </div>
   </div>
         
-  
+  <nav aria-label="Page navigation example" class="d-flex justify-content-center my-3">
+    <div class="mx-2 d-flex" >
+      <label for="">Limit</label>
+      <select class="form-control form-control-sm" (change)="changeLimit($event)">
+        <option>3</option>
+        <option>6</option>
+        <option>9</option>
+      </select>
+    </div>
 
+    <div>
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" (click)="changePgae($event)" (page)="1" >1</a></li>
+        <li class="page-item"><a class="page-link" (click)="changePgae($event)">2</a></li>
+        <li class="page-item"><a class="page-link" (click)="changePgae($event)">3</a></li>
+        <li class="page-item">
+          <a class="page-link" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+   
+  </nav>
+  
+	<!-- <div  class="pagination-container mt-10px">
+		<button [ngClass]="{'no-hover': page == 1}" class="mr-3px" [disabled]="page == 1" (click)="changePage(page - 1)"> &laquo; </button>
+		<button *ngIf="page >= 3" class="mr-3px" (click)="changePage(1)"> 1 </button>
+		<div *ngIf="page >= 4" class="mr-3px mt-7px"> ... </div>
+		<button [ngClass]="{'active no-hover': buttonArray[0] == page}" class="mr-3px" (click)="changePage(buttonArray[0])"> {{ buttonArray[0] }} </button>
+		<button [ngClass]="{'active no-hover': buttonArray[1] == page}" class="mr-3px" (click)="changePage(buttonArray[1])"> {{ buttonArray[1] }} </button>
+		<button *ngIf="end != 2" [ngClass]="{'active no-hover': buttonArray[2] == page}" class="mr-3px" (click)="changePage(buttonArray[2])"> {{ buttonArray[2] }} </button>
+		<div *ngIf="page <= (end - 3)" class="mr-3px mt-7px"> ... </div>
+		<button *ngIf="page <= (end - 2)" class="mr-3px" (click)="changePage(end)"> {{ end }} </button>
+		<button [ngClass]="{'no-hover': page == end}" [disabled]="page == end" class="mr-3px" (click)="changePage(page + 1)"> &raquo; </button>
+	</div> -->
   
 
 

@@ -15,6 +15,8 @@ export class ViewCategoryComponent implements OnInit {
 
   category: Category;
   itemList: Product;
+  page:number=1;
+  limit:number=3;
 
   closeResult = '';
 
@@ -43,11 +45,39 @@ export class ViewCategoryComponent implements OnInit {
     this._activatedRoute.params.subscribe(data => {
       this.category = data.id;
 
-    this._itemService.viewCategory(this.category).subscribe(catData => {
+    this._itemService.viewCategory(this.category, this.page, this.limit).subscribe(catData => {
       this.itemList = catData;
-
-    })
     });
+    });
+  }
+
+
+  changePgae(event){
+    console.log(event.target.text);
+    this.page= event.target.text;
+  
+    this._activatedRoute.params.subscribe(data => {
+      this.category = data.id;
+
+    this._itemService.viewCategory(this.category, this.page, this.limit).subscribe(catData => {
+      this.itemList = catData;
+    });
+    });
+  }
+  
+  changeLimit(event){
+    console.log(event.target.value);
+    this.limit=event.target.value;
+  
+    
+    this._activatedRoute.params.subscribe(data => {
+      this.category = data.id;
+
+    this._itemService.viewCategory(this.category, this.page, this.limit).subscribe(catData => {
+      this.itemList = catData;
+    });
+    });
+  
   }
 
   selectedItems:number[]=[];

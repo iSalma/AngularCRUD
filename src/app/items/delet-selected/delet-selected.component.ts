@@ -9,7 +9,7 @@ import { Product } from '../product';
 })
 export class DeletSelectedComponent implements OnInit {
 
-  @Input() myIDs = new EventEmitter<number>();
+  @Input() myIDs = new EventEmitter<number[]>();
 
   productData : Product
   ={    
@@ -44,6 +44,8 @@ export class DeletSelectedComponent implements OnInit {
         console.log(deleteProductdata);
       });
     }
+
+
 
   }
 

@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import {  Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
 import {Product} from './product'
 import { Observable } from 'rxjs';
 import { Category } from '../screen/category';
-import { ProductsModule } from '../products/products.module';
+import { ScreenModule } from '../screen/screen.module';
 
 @Injectable({
   providedIn: 'root'
@@ -33,10 +33,11 @@ export class ItemService {
     return this._httpClient.delete<Product>(itemUrl);
   }
 
-  getAllItems(): Observable<Product>{
-    const itemUrl = 'http://localhost:3000/products/';
+  getAllItems(page, limit): Observable<Product>{
+    const itemUrl = 'http://localhost:3000/products?_page='+page+'&_limit='+limit;
     return this._httpClient.get<Product>(itemUrl);
   }
+
 
   getOne(itemId): Observable<Product>{
     const itemUrl = 'http://localhost:3000/products/'+itemId;
@@ -49,8 +50,8 @@ export class ItemService {
     return this._httpClient.get<Category>(categoriesUrl);
   }
 
-  viewCategory(categoryId):Observable<Product>{
-    const categoriesUrl = 'http://localhost:3000/products?cat='+categoryId;
+  viewCategory(categoryId, page, limit):Observable<Product>{
+    const categoriesUrl = 'http://localhost:3000/products?cat='+categoryId+'&_page='+page+'&_limit='+limit;
     return this._httpClient.get<Product>(categoriesUrl);
   }
 
@@ -58,4 +59,5 @@ export class ItemService {
     const categoriesUrl = 'http://localhost:3000/categories/'+categoryId;
     return this._httpClient.delete<Category>(categoriesUrl);
   }
+
 }

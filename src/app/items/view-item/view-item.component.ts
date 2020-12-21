@@ -17,13 +17,39 @@ export class ViewItemComponent implements OnInit {
 
   itemList: Product;
   currentID:number;
+  page:number=1;
+  limit:number=3;
 
   constructor(private _itemService: ItemService) { }
 
   ngOnInit(): void {
-    this._itemService.getAllItems().subscribe(data=>{
+
+    this._itemService.getAllItems(1,3).subscribe(data=>{
       this.itemList =data;
+      console.log("n"+Object.keys( this.itemList).length);
     }); 
+}
+
+changePgae(event){
+  console.log(event.target.text);
+  this.page= event.target.text;
+
+  this._itemService.getAllItems(this.page,this.limit).subscribe(data=>{
+    this.itemList =data;
+    console.log("n"+Object.keys( this.itemList).length);
+  }); 
+}
+
+changeLimit(event){
+  console.log(event.target.value);
+  this.limit=event.target.value;
+
+  
+  this._itemService.getAllItems(this.page, this.limit).subscribe(data=>{
+    this.itemList =data;
+    console.log("n"+Object.keys( this.itemList).length);
+  }); 
+
 }
 
 
