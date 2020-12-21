@@ -40,7 +40,7 @@ export class DeletSelectedComponent implements OnInit {
     console.log(this.myIDs.length); //array of selected items IDs
 
     for(let i=0; i < (this.myIDs.length); i++){
-      this._ItemsService.deleteItem(this.myIDs[0]).subscribe(deleteProductdata => {
+      this._ItemsService.deleteItem(this.myIDs[i]).subscribe(deleteProductdata => {
         console.log(deleteProductdata);
       });
     }
