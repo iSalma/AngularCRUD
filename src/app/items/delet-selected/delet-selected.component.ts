@@ -45,9 +45,6 @@ export class DeletSelectedComponent implements OnInit {
       });
     }
 
-
-
   }
-
 
 }

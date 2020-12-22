@@ -17,6 +17,8 @@ export class ViewCategoryComponent implements OnInit {
   itemList: Product;
   page:number=1;
   limit:number=3;
+  itemsCount:number;
+  pageButton:number;
 
   closeResult = '';
 
@@ -49,6 +51,18 @@ export class ViewCategoryComponent implements OnInit {
       this.itemList = catData;
     });
     });
+
+    this._itemService.viewCategory(this.category, '','').subscribe(catData => {
+      // this.itemList = catData;
+          this.itemsCount=Object.keys(catData).length;
+          console.log("n"+ this.itemsCount);
+
+          this.pageButton = Math.ceil(this.itemsCount / this.limit); //for approximated number get to closer bigger number
+          console.log(this.pageButton);
+
+    });
+
+    
   }
 
 
@@ -69,6 +83,8 @@ export class ViewCategoryComponent implements OnInit {
     console.log(event.target.value);
     this.limit=event.target.value;
   
+    this.pageButton = Math.ceil(this.itemsCount / this.limit);
+    console.log(this.pageButton);
     
     this._activatedRoute.params.subscribe(data => {
       this.category = data.id;
@@ -78,6 +94,28 @@ export class ViewCategoryComponent implements OnInit {
     });
     });
   
+  }
+
+  nextPage(){
+
+    this._activatedRoute.params.subscribe(data => {
+      this.category = data.id;
+
+    this._itemService.viewCategory(this.category, this.page+1, this.limit).subscribe(catData => {
+      this.itemList = catData;
+    });
+    });
+  }
+
+  prevPage(){
+    this._activatedRoute.params.subscribe(data => {
+      this.category = data.id;
+
+    this._itemService.viewCategory(this.category, this.page-1, this.limit).subscribe(catData => {
+      this.itemList = catData;
+    });
+    });
+
   }
 
   selectedItems:number[]=[];
@@ -98,5 +136,6 @@ export class ViewCategoryComponent implements OnInit {
       console.log(this.selectedItems);
     }
  
+  
 
 }

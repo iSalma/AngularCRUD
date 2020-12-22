@@ -1,5 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
 import { NgbModal,ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap/';
+import { Product } from 'src/app/items/product';
+import { map } from 'rxjs/operators';
 
 import {ItemService} from '../../items/item.service'
 import { Category } from '../category';
@@ -13,6 +15,9 @@ export class SidemenuComponent implements OnInit {
   categoryList:Category;
   closeResult = '';
   categoryName:string = "";
+  itemList:Product;
+  result=[];
+
   constructor(private modalService: NgbModal, private _itemService: ItemService) { }
 
   getVal(item){
@@ -69,6 +74,22 @@ export class SidemenuComponent implements OnInit {
     this._itemService.deleteCategory(catID).subscribe(data =>{
       // console.log(data);
     });
+
+    //delete all related products
+    this._itemService.viewCategory(5, '', '').subscribe(data => {
+      console.log(data);
+      for( let i in data){
+        console.log(data[i].id);
+
+        this._itemService.deleteItem(data[i].id).subscribe(deleteProductdata => {
+          console.log(deleteProductdata);
+        });
+
+      }
+    });
+ 
+
   }
 
 }
+

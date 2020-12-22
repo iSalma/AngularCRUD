@@ -19,15 +19,28 @@ export class ViewItemComponent implements OnInit {
   currentID:number;
   page:number=1;
   limit:number=3;
-
+  itemsCount:number;
+  pageButton:number;
+ 
   constructor(private _itemService: ItemService) { }
 
   ngOnInit(): void {
 
+    //to calculate all items count
+    this._itemService.getAllItems('','').subscribe(data=>{
+      // this.itemList =data;
+      this.itemsCount=Object.keys(data).length;
+      console.log("n"+ this.itemsCount);
+
+      this.pageButton = Math.ceil(this.itemsCount / this.limit); //for approximated number get to closer bigger number
+      console.log(this.pageButton);
+    }); 
+
+
     this._itemService.getAllItems(1,3).subscribe(data=>{
       this.itemList =data;
-      console.log("n"+Object.keys( this.itemList).length);
-    }); 
+
+    });
 }
 
 changePgae(event){
@@ -44,6 +57,8 @@ changeLimit(event){
   console.log(event.target.value);
   this.limit=event.target.value;
 
+  this.pageButton = Math.ceil(this.itemsCount / this.limit);
+  console.log(this.pageButton);
   
   this._itemService.getAllItems(this.page, this.limit).subscribe(data=>{
     this.itemList =data;
@@ -52,6 +67,21 @@ changeLimit(event){
 
 }
 
+nextPage(){
+  this.page = this.page-1;
+  this._itemService.getAllItems(this.page,this.limit).subscribe(data=>{
+    this.itemList =data;
+    console.log("n"+Object.keys( this.itemList).length);
+  }); 
+}
+
+prevPage(){
+  this.page = this.page-1;
+  this._itemService.getAllItems(this.page,this.limit).subscribe(data=>{
+    this.itemList =data;
+    console.log("n"+Object.keys( this.itemList).length);
+  }); 
+}
 
   itemID(itemID){
   console.log(itemID);
