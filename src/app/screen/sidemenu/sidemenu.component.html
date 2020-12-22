@@ -1,13 +1,16 @@
 
 <!-- Category Links -->
 <h4 class="my-4">categories</h4>
-<a  href="view-item" class="list-group-item">All</a>
+<a  href="view-item" class="list-group-item row">All</a>
 <div  class="list-group container" *ngFor="let cat of categoryList">
-    <div class="d-flex">
-      <a href="category/{{cat.id}}" class="list-group-item text-primary">
-        {{cat.categoryName}}
+    <div class=" row ">
+      <a href="category/{{cat.id}}" class="list-group-item text-primary col-md-8">
+        {{cat.id}}. {{cat.categoryName}}
       </a>
-      <button class="btn btn-outline-danger list-group-item" (click)="removeCat(cat.id)">Delete</button>
+
+      <button class="btn btn-sm btn-outline-danger list-group-item col-md-4" (click)="removeCat(cat.id)">Delete</button>
+      <!-- <button class="btn btn-sm btn-outline-warning list-group-item col-md-3" (click)="removeCat(cat.id)">Update</button> -->
+
   </div>   
 </div>
 <div class="showLink"></div> 

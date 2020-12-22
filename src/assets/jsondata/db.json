@@ -90,12 +90,26 @@
       "code": 356,
       "price": 54,
       "id": 22
+    },
+    {
+      "cat": 5,
+      "name": "llll",
+      "code": 44,
+      "price": 44,
+      "id": 23
+    },
+    {
+      "cat": 5,
+      "name": "kkk",
+      "code": 65,
+      "price": 65,
+      "id": 24
     }
   ],
   "categories": [
     {
-      "id": 1,
-      "categoryName": "cat 1"
+      "categoryName": "cat 1",
+      "id": 1
     },
     {
       "id": 2,
@@ -108,6 +122,10 @@
     {
       "categoryName": "cat 4",
       "id": 4
+    },
+    {
+      "categoryName": "t-shirts",
+      "id": 5
     }
   ]
 }

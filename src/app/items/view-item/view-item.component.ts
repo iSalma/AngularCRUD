@@ -68,7 +68,9 @@ changeLimit(event){
 }
 
 nextPage(){
-  this.page = this.page-1;
+  this.page = Number(this.page)+1;
+  console.log(this.page);
+
   this._itemService.getAllItems(this.page,this.limit).subscribe(data=>{
     this.itemList =data;
     console.log("n"+Object.keys( this.itemList).length);
@@ -76,7 +78,9 @@ nextPage(){
 }
 
 prevPage(){
-  this.page = this.page-1;
+  this.page = Number(this.page)-1;
+  console.log(this.page);
+  
   this._itemService.getAllItems(this.page,this.limit).subscribe(data=>{
     this.itemList =data;
     console.log("n"+Object.keys( this.itemList).length);

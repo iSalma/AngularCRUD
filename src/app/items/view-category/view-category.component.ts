@@ -97,21 +97,26 @@ export class ViewCategoryComponent implements OnInit {
   }
 
   nextPage(){
+    this.page = Number(this.page)+1;
+    console.log(this.page);  
 
     this._activatedRoute.params.subscribe(data => {
       this.category = data.id;
 
-    this._itemService.viewCategory(this.category, this.page+1, this.limit).subscribe(catData => {
+    this._itemService.viewCategory(this.category, this.page, this.limit).subscribe(catData => {
       this.itemList = catData;
     });
     });
   }
 
   prevPage(){
+    this.page = Number(this.page)-1;
+    console.log(this.page);
+
     this._activatedRoute.params.subscribe(data => {
       this.category = data.id;
 
-    this._itemService.viewCategory(this.category, this.page-1, this.limit).subscribe(catData => {
+    this._itemService.viewCategory(this.category, this.page, this.limit).subscribe(catData => {
       this.itemList = catData;
     });
     });

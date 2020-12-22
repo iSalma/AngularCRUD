@@ -60,5 +60,10 @@ export class ItemService {
     return this._httpClient.delete<Category>(categoriesUrl);
   }
 
+  // updateCategory(categoryId, catName):Observable<Category>{
+  //   const categoriesUrl = 'http://localhost:3000/categories/'+categoryId;
+  //   return this._httpClient.put<Category>(categoriesUrl, catName);
+  // }
+
   
 }
