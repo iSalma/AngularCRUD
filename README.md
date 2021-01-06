@@ -1,5 +1,8 @@
 # Dokkan
 
+Product CRUD application using Angular10 and json-server to get and post data.
+You can add categories and its items, view by category, view all items, update items and delete items.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
 
 ## Development server
